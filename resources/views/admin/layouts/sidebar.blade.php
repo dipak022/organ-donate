@@ -158,6 +158,77 @@
                     </ul>
                 </li>
 
+                @php
+                    $isActive = routeCheck(['admin.donate.show']);
+                @endphp
+                <li class="nav-item {{ $isActive ? 'menu-open' : '' }}">
+                    <a href="#" class="nav-link {{ $isActive ? 'active' : '' }}">
+                        <i class="nav-icon fas fa-cogs"></i>
+                        <p>
+                            Donate
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{{ route('admin.donate.show') }}"
+                                class="nav-link {{ routeCheck(['admin.donate.show']) ? 'active' : '' }}">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Donate</p>
+                            </a>
+                            
+                        </li>
+                    </ul>
+                </li>
+
+                @php
+                    $isActive = routeCheck(['admin.death.donate.show']);
+                @endphp
+                <li class="nav-item {{ $isActive ? 'menu-open' : '' }}">
+                    <a href="#" class="nav-link {{ $isActive ? 'active' : '' }}">
+                        <i class="nav-icon fas fa-cogs"></i>
+                        <p>
+                            Death Donate
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{{ route('admin.death.donate.show') }}"
+                                class="nav-link {{ routeCheck(['admin.death.donate.show']) ? 'active' : '' }}">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Death Donate</p>
+                            </a>
+                            
+                        </li>
+                    </ul>
+                </li>
+
+
+
+                @php
+                    $isActive = routeCheck(['admin.user.account.show']);
+                @endphp
+                <li class="nav-item {{ $isActive ? 'menu-open' : '' }}">
+                    <a href="#" class="nav-link {{ $isActive ? 'active' : '' }}">
+                        <i class="nav-icon fas fa-cogs"></i>
+                        <p>
+                            User Account
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{{ route('admin.user.account.show') }}"
+                                class="nav-link {{ routeCheck(['admin.user.account.show']) ? 'active' : '' }}">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>User Account</p>
+                            </a>
+                            
+                        </li>
+                    </ul>
+                </li>
+
 
                 
 

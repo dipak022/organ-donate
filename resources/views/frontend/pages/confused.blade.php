@@ -6,7 +6,19 @@
 
 @section('content')
 
-
+    <!-- bradcam_area_start  -->
+    <div class="bradcam_area breadcam_bg overlay d-flex align-items-center justify-content-center">
+            <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="bradcam_text text-center">
+                        <h3>Confused</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- bradcam_area_end  -->
 
 
     <!-- news__area_start  -->
@@ -15,7 +27,7 @@
             <div class="row justify-content-center">
                 <div class="col-lg-6">
                     <div class="section_title text-center mb-55">
-                        <h3><span>News & Updates</span></h3>
+                        <h3><span>Eliminate The Confused </span></h3>
                     </div>
                 </div>
             </div>

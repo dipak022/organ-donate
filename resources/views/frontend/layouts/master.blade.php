@@ -11,9 +11,7 @@
     @include('frontend.layouts.header')
     <!-- header-end -->
 
-    <!-- slider_area_start -->
-    @include('frontend.layouts.slider')
-    <!-- slider_area_end -->
+  
 
     @yield('content')
 

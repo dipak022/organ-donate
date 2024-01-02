@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\DoctorController;
 use App\Http\Controllers\Admin\ConfusedController;
 use App\Http\Controllers\Admin\DepartmentController;
 use App\Http\Controllers\Admin\DesignationController;
+use App\Http\Controllers\Admin\ShowController;
 
 use Illuminate\Support\Facades\Route;
 
@@ -57,6 +58,12 @@ Route::group(['middleware' => ['auth:admin'], 'prefix' => 'admin', 'as' => 'admi
     Route::get('doctor-force-delete/{id}', [DoctorController::class, 'forceDelete'])->name('doctor.force-delete');
     Route::delete('doctor-multi-delete', [DoctorController::class, 'deleteAll'])->name('doctor.multi-delete');
     /*=============================Doctor End=============================*/
+
+
+    Route::get('donate-show', [ShowController::class, 'donateShow'])->name('donate.show');
+    Route::get('death-donate-show', [ShowController::class, 'deathDonateShow'])->name('death.donate.show');
+    Route::get('user-account-show', [ShowController::class, 'userAccountShow'])->name('user.account.show');
+    
 
 
      

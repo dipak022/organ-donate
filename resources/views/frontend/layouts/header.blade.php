@@ -6,14 +6,14 @@
                         <div class="col-xl-6 col-md-12 col-lg-8">
                             <div class="short_contact_list">
                                 <ul>
-                                    <li><a href="#"> <i class="fa fa-phone"></i> +1 (454) 556-5656</a></li>
-                                    <li><a href="#"> <i class="fa fa-envelope"></i>Yourmail@gmail.com</a></li>
+                                    <li><a href="#"> <i class="fa fa-phone"></i> (+88) 01521440888</a></li>
+                                    <li><a href="#"> <i class="fa fa-envelope"></i>tonisa35-2394@diu.edu.bd</a></li>
                                 </ul>
                             </div>
                         </div>
                         <div class="col-xl-6 col-md-6 col-lg-4">
                             <div class="social_media_links d-none d-lg-block">
-                                <a href="#">
+                                <a href="https://www.facebook.com/tonisa.adhikary">
                                     <i class="fa fa-facebook"></i>
                                 </a>
                                 <a href="#">
@@ -44,11 +44,10 @@
                             <div class="main-menu">
                                 <nav>
                                     <ul id="navigation">
-                                        <li><a href="index.html">home</a></li>
-                                        <li><a href="About.html">About</a></li>
-                                        <li><a href="contact.html">Contact</a></li>
+                                        <li><a href="{{ route('home') }}">home</a></li>
+                                        <li><a href="{{ route('contact') }}">Contact</a></li>
                                         @auth
-                                        <li><a href="contact.html">Profile</a></li>
+                                        <li><a href="{{ route('profile') }}">Profile</a></li>
                                         <li><a href="{{ route('user.logout') }}">Logout</a></li>
                                         @else
                                         <li><a href="{{ route('login') }}">Login</a></li>
@@ -64,7 +63,7 @@
                                 </div>
                                 <div class="Appointment">
                                     <div class="book_btn d-none d-lg-block">
-                                        <a href="#">Death News</a>
+                                        <a href="{{ route('death.news') }}">Death News</a>
                                     </div>
                                 </div>
                             </div>

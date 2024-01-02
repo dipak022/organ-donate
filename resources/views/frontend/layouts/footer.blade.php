@@ -9,12 +9,12 @@
                                     <img src="img/footer_logo.png" alt="">
                                 </a>
                             </div>
-                            <p class="address_text">Lorem ipsum dolor sit amet, <br> consectetur adipiscing elit, sed do <br> eiusmod tempor incididunt ut labore.
+                            <p class="address_text">Organ donation and transplantation is a surgical process to replace a failing organ with a healthy one from someone else who doesn't need it. Organ donors are usually recently deceased people who either volunteered before their death to donate their organs afterward, or their family donated them on their behalf
                             </p>
                             <div class="socail_links">
                                 <ul>
                                     <li>
-                                        <a href="#">
+                                        <a href="https://www.facebook.com/tonisa.adhikary">
                                             <i class="ti-facebook"></i>
                                         </a>
                                     </li>
@@ -59,10 +59,9 @@
                                 Contacts
                             </h3>
                             <div class="contacts">
-                                <p>+2(305) 587-3407 <br>
-                                    info@loveuscharity.com <br>
-                                    Flat 20, Reynolds Neck, North
-                                    Helenaville, FV77 8WS
+                                <p>(+88) 01521440888 <br>
+                                tonisa35-2394@diu.edu.bd<br>
+                                    Dhaka Dhanmondi,Sukrabad
                                 </p>
                             </div>
                         </div>
@@ -70,35 +69,14 @@
                     <div class="col-xl-3 col-md-6 col-lg-3">
                         <div class="footer_widget">
                             <h3 class="footer_title">
-                                Top News
+                                Organ donation News
                             </h3>
                             <ul class="news_links">
                                 <li>
                                     <div class="thumb">
-                                        <a href="#">
-                                            <img src="img/news/news_1.png" alt="">
+                                        <a href="{{ route('home') }}">
+                                            <img src="{{asset('frontend')}}/img/logo.png" alt="">
                                         </a>
-                                    </div>
-                                    <div class="info">
-                                        <a href="#">
-                                            <h4>School for African 
-                                                Childrens</h4>
-                                        </a>
-                                        <span>Jun 12, 2019</span>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="thumb">
-                                        <a href="#">
-                                            <img src="img/news/news_2.png" alt="">
-                                        </a>
-                                    </div>
-                                    <div class="info">
-                                        <a href="#">
-                                            <h4>School for African 
-                                                Childrens</h4>
-                                        </a>
-                                        <span>Jun 12, 2019</span>
                                     </div>
                                 </li>
                             </ul>
@@ -114,7 +92,7 @@
                     <div class="col-xl-12">
                         <p class="copy_right text-center">
                             <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="ti-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="ti-heart" aria-hidden="true"></i> by <a href="https://www.facebook.com/tonisa.adhikary" target="_blank">Tonisa Adhikary</a>
   <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
                         </p>
                     </div>

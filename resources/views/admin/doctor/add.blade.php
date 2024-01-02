@@ -42,8 +42,7 @@
                                         <option value="">Select Type</option>
                                         <option value="1" {{ old('type') == '1' ? 'selected' : '' }}>Doctor
                                         </option>
-                                        <option value="2" {{ old('type') == '2' ? 'selected' : '' }}>Assistant
-                                        </option>
+                                       
                                     </select>
                                     @error('type')
                                         <div class="alert alert-danger">{{ $message }}</div>
@@ -70,8 +69,8 @@
                                             style="color: red">*</span></label>
                                     <select name="dept_id" class="form-control">
                                         <option value="">Select Department</option>
-                                        @foreach ($department as $item)
-                                            <option value="{{ $item->id }}">{{ $item->name }}</option>
+                                        @foreach ($department as $dep)
+                                            <option value="{{ $dep->id }}">{{ $dep->name }}</option>
                                         @endforeach
                                     </select>
                                 </div>

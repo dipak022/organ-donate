@@ -28,10 +28,8 @@
 <script src="{{asset('frontend')}}/js/main.js"></script>
 <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
 <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
-<script src="{{ asset('backend/sweetalert2/sweetalert2.all.min.js') }}"></script>
-<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+</script>
 
-<script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap-switch-button@1.1.0/dist/bootstrap-switch-button.min.js">
 <script>
     @if(Session::has('message'))
             var type="{{Session::get('alert-type','info')}}"
@@ -52,6 +50,38 @@
                     break;
             }
     @endif
+</script>
+
+<script>
+    $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+        $('.dltBtn').click(function(e) {
+
+            var form = $(this).closest('form');
+            var dataId = $(this).data('id');
+            e.preventDefault();
+            Swal.fire({
+                title: 'Are you sure?',
+                text: "You won't be able to revert this!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes, delete it!'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    form.submit();
+                    Swal.fire(
+                        'Deleted!',
+                        'Your file has been deleted.',
+                        'success'
+                    )
+                }
+            })
+        });
 </script>
 
 @yield('scripts')

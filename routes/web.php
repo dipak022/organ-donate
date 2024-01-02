@@ -6,10 +6,7 @@ use App\Http\Controllers\RootController;
 use Illuminate\Support\Facades\Auth;
 
 
-Route::get('/', function () {
-    return view('welcome');
-    
-});
+
 Route::get('/', [RootController::class, 'home'])->name('home');
 Route::get('/dashboard', [RootController::class, 'home'])->middleware(['auth'])->name('dashboard');
 

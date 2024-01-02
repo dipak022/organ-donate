@@ -5,6 +5,8 @@ use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\CustomerController;
 use App\Http\Controllers\Admin\DoctorController;
 use App\Http\Controllers\Admin\ConfusedController;
+use App\Http\Controllers\Admin\DepartmentController;
+use App\Http\Controllers\Admin\DesignationController;
 
 use Illuminate\Support\Facades\Route;
 
@@ -29,6 +31,22 @@ Route::group(['middleware' => ['auth:admin'], 'prefix' => 'admin', 'as' => 'admi
     Route::get('confused-restore/{id}', [DepartmentController::class, 'restore'])->name('confused-restore');
     Route::get('confused-force-delete/{id}', [DepartmentController::class, 'forceDelete'])->name('confused.force-delete');
     Route::delete('confused-multi-delete', [DepartmentController::class, 'deleteAll'])->name('confused.multi-delete');
+
+    /*=====Department======*/
+    Route::resource('department', DepartmentController::class);
+    Route::get('department-status/{id}', [DepartmentController::class, 'changeStatus'])->name('department-status');
+    Route::get('department-trash', [DepartmentController::class, 'trash'])->name('department-trash');
+    Route::get('department-restore/{id}', [DepartmentController::class, 'restore'])->name('department-restore');
+    Route::get('department-force-delete/{id}', [DepartmentController::class, 'forceDelete'])->name('department.force-delete');
+    Route::delete('department-multi-delete', [DepartmentController::class, 'deleteAll'])->name('department.multi-delete');
+
+    /*=====Designation======*/
+    Route::resource('designation', DesignationController::class);
+    Route::get('designation-status/{id}', [DesignationController::class, 'changeStatus'])->name('designation-status');
+    Route::get('designation-trash', [DesignationController::class, 'trash'])->name('designation-trash');
+    Route::get('designation-restore/{id}', [DesignationController::class, 'restore'])->name('designation-restore');
+    Route::get('designation-force-delete/{id}', [DesignationController::class, 'forceDelete'])->name('designation.force-delete');
+    Route::delete('designation-multi-delete', [DesignationController::class, 'deleteAll'])->name('designation.multi-delete');
 
      /*=============================Doctor Start=============================*/
     /*=====Doctor======*/

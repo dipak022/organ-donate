@@ -83,6 +83,56 @@
                 </li>
 
 
+                @php
+                    $isActive = routeCheck(['admin.department.*', 'admin.department-status', 'admin.department-trash', 'admin.department-restore', 'admin.department.force-delete', 'admin.department.multi-delete']);
+                @endphp
+                {{-- xray Rate --}}
+                <li class="nav-item {{ $isActive ? 'menu-open' : '' }}">
+                    <a href="#" class="nav-link {{ $isActive ? 'active' : '' }}">
+                        <i class="nav-icon fas fa-cogs"></i>
+                        <p>
+                            Department
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{{ route('admin.department.index') }}"
+                                class="nav-link {{ routeCheck(['admin.department.*', 'admin.department-trash']) ? 'active' : '' }}">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Department</p>
+                            </a>
+                            
+                        </li>
+                    </ul>
+                </li>
+
+
+                @php
+                    $isActive = routeCheck(['admin.designation.*', 'admin.designation-status', 'admin.designation-trash', 'admin.designation-restore', 'admin.designation.force-delete', 'admin.designation.multi-delete']);
+                @endphp
+                {{-- xray Rate --}}
+                <li class="nav-item {{ $isActive ? 'menu-open' : '' }}">
+                    <a href="#" class="nav-link {{ $isActive ? 'active' : '' }}">
+                        <i class="nav-icon fas fa-cogs"></i>
+                        <p>
+                            Designation
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{{ route('admin.designation.index') }}"
+                                class="nav-link {{ routeCheck(['admin.designation.*', 'admin.designation-trash']) ? 'active' : '' }}">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Designation</p>
+                            </a>
+                            
+                        </li>
+                    </ul>
+                </li>
+
+
                
                 @php
                     $isActive = routeCheck(['admin.doctor.*', 'admin.doctor-status', 'admin.doctor-trash', 'admin.doctor-restore', 'admin.doctor.force-delete', 'admin.doctor.multi-delete']);

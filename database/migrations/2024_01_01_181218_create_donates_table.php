@@ -34,6 +34,9 @@ return new class extends Migration
             $table->string('donor_signature')->nullable();
             $table->string('specific_organs_tissues_name')->nullable();
             $table->text('anything_description')->nullable();
+            $table->text('use_anything_description')->nullable();
+            $table->date('use_date')->nullable();
+            $table->tinyInteger('use_status')->nullable();
             $table->tinyInteger('status')->default('1')->comment("0 = Deactive, 1 = Active");
             $table->unsignedBigInteger('created_by');
             $table->unsignedBigInteger('updated_by')->nullable();

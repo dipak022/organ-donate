@@ -8,6 +8,7 @@ use App\Models\Donate;
 use App\Models\DeathDonate;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
+use DateTime;
 class ShowController extends Controller
 {
     public $user;
@@ -32,6 +33,32 @@ class ShowController extends Controller
     public function userAccountShow(){
         $data['users'] = User::all();
         return view('admin.show.user', $data);
+    }
+
+
+    public function changeStatus($id)
+    {
+        $getStatus = Donate::select('use_status')->where('id', $id)->first();
+        if ($getStatus->use_status == 1) {
+            $status = 0;
+        } else {
+            $status = 1;
+        }
+        Donate::where('id', $id)->update(['use_status' => $status]);
+        return redirect()->back()->with('success', 'Status Updated Successfully!');
+    }
+
+    public function donateConfirm(Request $request, $id){
+
+        $donate = Donate::find($id);
+        $donate->use_anything_description = $request->use_anything_description;
+        $donate->use_date = strtotime($request->use_date) ? (new DateTime($request->use_date))->format('Y-m-d') : null;
+        $donate->updated_by = Auth::guard('admin')->user()->id;
+        if ($donate->isDirty()) {
+            $donate->update();
+            return redirect()->route('admin.donate.show')->with('success', 'Updated Successfully!');
+        }
+        return redirect()->route('admin.donate.show')->with('error', 'Nothing Changed!');
     }
 
 

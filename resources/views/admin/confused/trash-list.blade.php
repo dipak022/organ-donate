@@ -11,7 +11,7 @@
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="#">Setup</a></li>
+                        <li class="breadcrumb-item"><a href="#">Admin</a></li>
                         <li class="breadcrumb-item active">Confused</li>
                     </ol>
                 </div>
@@ -56,7 +56,7 @@
                                         <td>{{ $confused->name }}</td>
                                         <td>{{ $confused->description }}</td>
                                         <td>
-                                            @if ($department->status == '1')
+                                            @if ($confused->status == '1')
                                                 <a href="{{ route('admin.confused-status', $confused->id) }}"
                                                     class="btn btn-sm btn-success disabled">Active</a>
                                             @else

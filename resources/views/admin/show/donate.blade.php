@@ -46,6 +46,8 @@
                                 <th>Organs Tissues For</th>
                                 <th>Specific Organs Tissues</th>
                                 <th>Note</th>
+                                <th>Status</th>
+                                <th class="text-center">Action</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -65,8 +67,36 @@
                                     <td>{{ $donate->organs_tissues_for }}</td>
                                     <td>{{ $donate->specific_organs_tissues_name }}</td>
                                     <td>{{ $donate->anything_description }}</td>
-                                    
+                                    <td>
+                                        @if ($donate->use_status == '1')
+                                            <a href="{{ route('admin.donate-status', $donate->id) }}"
+                                                class="btn btn-sm btn-success">Used Organ </a>
+                                        @else
+                                            <a href="{{ route('admin.donate-status', $donate->id) }}"
+                                                class="btn btn-sm btn-danger">Unused Organ</a>
+                                        @endif
+                                    </td>
+                                    <td>
+                                        <div class="d-flex justify-content-center">
+                                            @if ($donate->use_status == '0')
+                                            <button class="btn btn-success btn-sm mr-1" data-toggle="modal" data-target="#edit_{{ $donate->id }}"><i class="fas fa-money-check-alt mr-1"></i>Used Organ</button>
+                                            @else
+                                            <i class="fas fa-shield-cross"></i>
+                                            <button class="btn btn-info btn-sm mr-1" data-toggle="modal" data-target="#show_{{ $donate->id }}"><i class="fas fa-eye mr-1"></i>View Used Organ</button>
+                                            @endif
+                                        </div>
+                                    </td>
                                 </tr>
+                                @if ($donate->use_status == '0')
+                                @include('admin.show.donate-edit-model', [
+                                    'donate' => $donate
+                                ]);
+                                @else
+                                @include('admin.show.donate-show-model', [
+                                    'donate' => $donate
+                                ]);
+                                @endif
+                                
                             @empty
                             @endforelse
                         </tbody>
@@ -86,6 +116,8 @@
                                 <th>Organs Tissues For</th>
                                 <th>Specific Organs Tissues</th>
                                 <th>Note</th>
+                                <th>Status</th>
+                                <th>Action</th>
                             </tr>
                         </tfoot>
                     </table>

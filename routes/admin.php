@@ -27,11 +27,11 @@ Route::group(['middleware' => ['auth:admin'], 'prefix' => 'admin', 'as' => 'admi
     
     /*=====confused======*/
     Route::resource('confused', ConfusedController::class);
-    Route::get('confused-status/{id}', [DepartmentController::class, 'changeStatus'])->name('confused-status');
-    Route::get('confused-trash', [DepartmentController::class, 'trash'])->name('confused-trash');
-    Route::get('confused-restore/{id}', [DepartmentController::class, 'restore'])->name('confused-restore');
-    Route::get('confused-force-delete/{id}', [DepartmentController::class, 'forceDelete'])->name('confused.force-delete');
-    Route::delete('confused-multi-delete', [DepartmentController::class, 'deleteAll'])->name('confused.multi-delete');
+    Route::get('confused-status/{id}', [ConfusedController::class, 'changeStatus'])->name('confused-status');
+    Route::get('confused-trash', [ConfusedController::class, 'trash'])->name('confused-trash');
+    Route::get('confused-restore/{id}', [ConfusedController::class, 'restore'])->name('confused-restore');
+    Route::get('confused-force-delete/{id}', [ConfusedController::class, 'forceDelete'])->name('confused.force-delete');
+    Route::delete('confused-multi-delete', [ConfusedController::class, 'deleteAll'])->name('confused.multi-delete');
 
     /*=====Department======*/
     Route::resource('department', DepartmentController::class);
@@ -63,6 +63,11 @@ Route::group(['middleware' => ['auth:admin'], 'prefix' => 'admin', 'as' => 'admi
     Route::get('donate-show', [ShowController::class, 'donateShow'])->name('donate.show');
     Route::get('death-donate-show', [ShowController::class, 'deathDonateShow'])->name('death.donate.show');
     Route::get('user-account-show', [ShowController::class, 'userAccountShow'])->name('user.account.show');
+
+    Route::get('donate-status/{id}', [ShowController::class, 'changeStatus'])->name('donate-status');
+    Route::post('donate-confirm/{id}', [ShowController::class, 'donateConfirm'])->name('donate-confirm.store');
+
+    
     
 
 

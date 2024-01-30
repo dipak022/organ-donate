@@ -78,7 +78,7 @@
                   0
                 </h3>
 
-                <p>Total Appoinment</p>
+                <p>Total Doner</p>
               </div>
               <div class="icon">
                 <i class="ion ion-stats-bars"></i>
@@ -94,7 +94,7 @@
                 <h3>
                   0
                 <sup style="font-size: 20px"></sup></h3>
-                <p>Appoinment Not Visitd</p>
+                <p>Total Receiver</p>
               </div>
               <div class="icon">
                 <i class="ion ion-stats-bars"></i>
@@ -111,7 +111,7 @@
                   0
                 </h3>
 
-                <p>Appoinment Visitd</p>
+                <p>Total Make Donate</p>
               </div>
               <div class="icon">
                 <i class="ion ion-stats-bars"></i>
@@ -128,7 +128,7 @@
                   0
                 </h3>
 
-                <p>Appointment Amount</p>
+                <p>Total User</p>
               </div>
               <div class="icon">
                 <i class="ion ion-stats-bars"></i>

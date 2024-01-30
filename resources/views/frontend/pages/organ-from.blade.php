@@ -16,7 +16,7 @@
             <div class="row">
                    
                     <div class="col-lg-12">
-                        <form class="form-contact contact_form"  novalidate="novalidate" action="{{ route('organ.doantion.store') }}" method="POST" enctype="multipart/form-data">
+                        <form class=""  novalidate="novalidate" action="{{ route('organ.doantion.store') }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="row">
                                 <div class="col-sm-6">
@@ -159,9 +159,9 @@
                                 </div>
                                 <div class="col-12">
                                     <div class="form-group">
-                                        <label for="" class="col-form-label">Donor's signature<span
+                                        <label for="" class="col-form-label">Donor's file<span
                                             style="color: red">*</span></label>
-                                        <input class="form-control" name="donor_signature" id="donor_signature" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Donor's signature'" placeholder="Enter Donor's signature" required>
+                                        <input class="form-control" name="donor_signature" id="donor_signature" type="file" required>
                                     </div>
                                 </div>
                                 

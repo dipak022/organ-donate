@@ -58,12 +58,12 @@
                                 
                                 <div class="Appointment">
                                     <div class="book_btn d-none d-lg-block">
-                                        <a data-scroll-nav='1' href="#">Make a Donate</a>
+                                        <a  href="{{ route('make-a-donate') }}">Make a Donate</a>
                                     </div>
                                 </div>
                                 <div class="Appointment">
                                     <div class="book_btn d-none d-lg-block">
-                                        <a href="{{ route('death.news') }}">Death News</a>
+                                        <a href="{{ route('death.news') }}">Death Doner Alert</a>
                                     </div>
                                 </div>
                             </div>

@@ -16,7 +16,7 @@
             <div class="row">
                    
                     <div class="col-lg-12">
-                        <form class="form-contact contact_form"  novalidate="novalidate" action="{{ route('death.organ.doantion.status.store') }}" method="POST" enctype="multipart/form-data">
+                        <form class=""  novalidate="novalidate" action="{{ route('death.organ.doantion.status.store') }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="row">
                                 <div class="col-sm-12">
@@ -97,7 +97,7 @@
                                     </div>
                                 </div>
                                 
-                                <div class="col-6">
+                                <div class="col-12">
                                     <div class="form-group">
                                         <label for="" class="col-form-label">I  Authorize Death organs/tissues status<span
                                             style="color: red">*</span></label>

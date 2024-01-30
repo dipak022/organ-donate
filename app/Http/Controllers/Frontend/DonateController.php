@@ -13,6 +13,7 @@ use DateTime;
 class DonateController extends Controller
 {
     public function organDoantionStore(Request $request){
+        //return $request->all();
 
         
 
@@ -31,9 +32,9 @@ class DonateController extends Controller
             'gender' => 'required|string',
             'permission_to_donate' => 'required|string',
             'organs_tissues_for' => 'required|string',
-            'donor_signature' => 'required|string',
             'anything_description' => 'nullable|string',
         ]);
+        //return $request->all();
 
         if ($validate->fails()) {
             return back()->withErrors($validate)->withInput();
@@ -57,7 +58,14 @@ class DonateController extends Controller
         $donate->permission_to_donate = $request->permission_to_donate;
         $donate->organs_tissues_for = $request->organs_tissues_for;
         $donate->specific_organs_tissues_name = $request->specific_organs_tissues_name;
-        $donate->donor_signature = $request->donor_signature;
+        if($request->hasFile('donor_signature')){
+            $image = $request->file('donor_signature');
+            $image_upload= hexdec(uniqid()).'.'.$image->getClientOriginalExtension();
+            Image::make($image)->resize(300,300)->save('Images/signature/'.$image_upload);
+            $imgUrl = 'Images/signature/'.$image_upload;
+            $donate->donor_signature = $imgUrl;
+        }
+
         $donate->anything_description = $request->anything_description;
         $donate->status = 1;
         $donate->created_by = Auth::user()->id;

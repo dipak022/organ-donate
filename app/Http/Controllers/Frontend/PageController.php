@@ -18,20 +18,23 @@ class PageController extends Controller
             );
             return redirect()->back()->with($notification);
         }
-        if($request->orgen_donate == "confused"){
+        if(request('orgen_donate') == "confused"){
             $data['confused'] = Confused::first();
             $count = Confused::count();
             $skip = 1;
             $limit = $count - $skip; 
             $data['confuseds'] = Confused::skip($skip)->take($limit)->get();
             return view("frontend.pages.confused", $data);
-        }else if($request->orgen_donate == "yes"){
+        }else if(request('orgen_donate') == "yes"){
             return view("frontend.pages.organ-from");
         }else{
             abort(404);
         }
     }
 
+    public function makeADonate(){
+        return view('frontend.pages.make-a-donate');
+    }
     public function contact(){
         return view('frontend.pages.contact');
     }

@@ -42,7 +42,7 @@
                     <a href="#" class="nav-link {{ $isActive ? 'active' : '' }}">
                         <i class="nav-icon fas fa-hospital-user"></i>
                         <p>
-                            Customer
+                            Receiver 
                             <i class="right fas fa-angle-left"></i>
                         </p>
                     </a>

@@ -111,6 +111,7 @@ class DoctorController extends Controller
     public function store(Request $request)
     {
         $validate = Validator::make($request->all(), [
+            'image' => 'required|image|mimes:jpeg,png,jpg|max:2048',
             'desig_id' => 'nullable',
             'dept_id' => 'nullable',
             'type' => 'required',

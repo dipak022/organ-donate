@@ -9,7 +9,7 @@ use App\Models\DeathDonate;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 use DateTime;
-
+use Image;
 class DonateController extends Controller
 {
     public function organDoantionStore(Request $request){

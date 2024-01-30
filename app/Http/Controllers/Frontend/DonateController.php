@@ -34,7 +34,6 @@ class DonateController extends Controller
             'organs_tissues_for' => 'required|string',
             'anything_description' => 'nullable|string',
         ]);
-        //return $request->all();
 
         if ($validate->fails()) {
             return back()->withErrors($validate)->withInput();

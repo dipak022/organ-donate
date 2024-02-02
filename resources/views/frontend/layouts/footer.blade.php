@@ -60,7 +60,7 @@
                             </h3>
                             <div class="contacts">
                                 <p>(+88) 01521440888 <br>
-                                tonisa35-2394@diu.edu.bd<br>
+                                    tonisaadhikary12@gmail.com<br>
                                     Dhaka Dhanmondi,Sukrabad
                                 </p>
                             </div>

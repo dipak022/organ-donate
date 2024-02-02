@@ -67,6 +67,14 @@ Route::group(['middleware' => ['auth:admin'], 'prefix' => 'admin', 'as' => 'admi
     Route::get('donate-status/{id}', [ShowController::class, 'changeStatus'])->name('donate-status');
     Route::post('donate-confirm/{id}', [ShowController::class, 'donateConfirm'])->name('donate-confirm.store');
 
+
+
+    /*============================= User Profile=============================*/
+    Route::get('profile', [AdminController::class, 'profile'])->name('profile');
+    Route::post('profile-update/{id}', [AdminController::class, 'profileUpdate'])->name('profile.update');
+    Route::get('password-change', [AdminController::class, 'passwordView'])->name('password.view');
+    Route::post('password-update', [AdminController::class, 'passwordUpdate'])->name('passwordAdmin.update');
+
     
     
 

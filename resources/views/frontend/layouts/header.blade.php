@@ -7,7 +7,7 @@
                             <div class="short_contact_list">
                                 <ul>
                                     <li><a href="#"> <i class="fa fa-phone"></i> (+88) 01521440888</a></li>
-                                    <li><a href="#"> <i class="fa fa-envelope"></i>tonisa35-2394@diu.edu.bd</a></li>
+                                    <li><a href="#"> <i class="fa fa-envelope"></i>tonisaadhikary12@gmail.com</a></li>
                                 </ul>
                             </div>
                         </div>

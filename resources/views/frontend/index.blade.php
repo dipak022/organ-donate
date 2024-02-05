@@ -15,7 +15,7 @@
             <div class="row justify-content-center">
                 <div class="col-lg-6">
                     <div class="section_title text-center mb-55">
-                        <h3><span>Organ Donation List</span></h3>
+                        <h3 style="font-size: 30px;"><span>Organ Donation </span></h3>
                     </div>
                 </div>
             </div>
@@ -73,7 +73,7 @@
             <div class="row justify-content-center">
                 <div class="col-lg-6">
                     <div class="section_title text-center mb-55">
-                        <h3><span>Doctors consultancy List</span></h3>
+                        <h3 style="font-size: 30px;"><span>Recommended Doctors</span></h3>
                     </div>
                 </div>
             </div>

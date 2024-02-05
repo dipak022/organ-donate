@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use App\Models\ComentForConfioused;
 use Illuminate\Http\Request;
 use App\Models\Confused;
 use App\Models\Donate;
@@ -24,6 +25,7 @@ class PageController extends Controller
             $skip = 1;
             $limit = $count - $skip; 
             $data['confuseds'] = Confused::skip($skip)->take($limit)->get();
+            $data['comments'] = ComentForConfioused::with(['user'])->where('user_id',Auth::id())->get();
             return view("frontend.pages.confused", $data);
         }else if(request('orgen_donate') == "yes"){
             return view("frontend.pages.organ-from");
@@ -46,6 +48,10 @@ class PageController extends Controller
     public function deathNews(){
         $data['donates'] = Donate::all();
         return view('frontend.pages.death-news', $data);
+    }
+    public function deathOrganTransplant(){
+        $data['donates'] = Donate::all();
+        return view('frontend.pages.organ_transplant', $data);
     }
 
 

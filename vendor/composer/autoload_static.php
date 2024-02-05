@@ -544,6 +544,7 @@ class ComposerStaticInitb5eb1a01c636b704c47251e44c62633c
     public static $classMap = array (
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
+        'App\\Http\\Controllers\\Admin\\AdminController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/AdminController.php',
         'App\\Http\\Controllers\\Admin\\ConfusedController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/ConfusedController.php',
         'App\\Http\\Controllers\\Admin\\CustomerController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/CustomerController.php',
         'App\\Http\\Controllers\\Admin\\DepartmentController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/DepartmentController.php',
@@ -590,7 +591,9 @@ class ComposerStaticInitb5eb1a01c636b704c47251e44c62633c
         'App\\Models\\Designation' => __DIR__ . '/../..' . '/app/Models/Designation.php',
         'App\\Models\\Doctor' => __DIR__ . '/../..' . '/app/Models/Doctor.php',
         'App\\Models\\Donate' => __DIR__ . '/../..' . '/app/Models/Donate.php',
+        'App\\Models\\OrganTransplant' => __DIR__ . '/../..' . '/app/Models/OrganTransplant.php',
         'App\\Models\\User' => __DIR__ . '/../..' . '/app/Models/User.php',
+        'App\\Models\\comment' => __DIR__ . '/../..' . '/app/Models/comment.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',
         'App\\Providers\\BroadcastServiceProvider' => __DIR__ . '/../..' . '/app/Providers/BroadcastServiceProvider.php',

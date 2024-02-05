@@ -62,6 +62,7 @@ Route::group(['middleware' => ['auth:admin'], 'prefix' => 'admin', 'as' => 'admi
 
     Route::get('donate-show', [ShowController::class, 'donateShow'])->name('donate.show');
     Route::get('death-donate-show', [ShowController::class, 'deathDonateShow'])->name('death.donate.show');
+    Route::get('death-organ-transplant-show', [ShowController::class, 'deathOrganTransplantShow'])->name('death.organ.transplant.show');
     Route::get('user-account-show', [ShowController::class, 'userAccountShow'])->name('user.account.show');
 
     Route::get('donate-status/{id}', [ShowController::class, 'changeStatus'])->name('donate-status');
@@ -74,6 +75,12 @@ Route::group(['middleware' => ['auth:admin'], 'prefix' => 'admin', 'as' => 'admi
     Route::post('profile-update/{id}', [AdminController::class, 'profileUpdate'])->name('profile.update');
     Route::get('password-change', [AdminController::class, 'passwordView'])->name('password.view');
     Route::post('password-update', [AdminController::class, 'passwordUpdate'])->name('passwordAdmin.update');
+
+    Route::get('message', [AdminController::class, 'messageIndex'])->name('message.index');
+    Route::get('message-edit/{id}', [AdminController::class, 'messageEdit'])->name('message.edit');
+    Route::post('message-update/{id}', [AdminController::class, 'messageUpdate'])->name('message.update');
+
+
 
     
     

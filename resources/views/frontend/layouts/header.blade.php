@@ -63,6 +63,11 @@
                                 </div>
                                 <div class="Appointment">
                                     <div class="book_btn d-none d-lg-block">
+                                        <a  href="{{ route('death.organ_transplant') }}">Organ Transplant</a>
+                                    </div>
+                                </div>
+                                <div class="Appointment">
+                                    <div class="book_btn d-none d-lg-block">
                                         <a href="{{ route('death.news') }}">Death Doner Alert</a>
                                     </div>
                                 </div>

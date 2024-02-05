@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Admin;
+use App\Models\ComentForConfioused;
 use App\Models\Doctor;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -87,6 +88,40 @@ class AdminController extends Controller
         }else{
             session()->flash('success', 'Profile Updated unsuccessfully!!');
         }
+    }
+
+
+    public function messageIndex()
+    {
+        $data['messages'] = ComentForConfioused::with(['user'])->get();
+        return view('admin.message.index', $data);
+    }
+
+    public function messageEdit($id)
+    {
+        $data['message'] = ComentForConfioused::find($id);
+        return view('admin.message.edit', $data);
+    }
+   
+
+    public function messageUpdate(Request $request, $id)
+    {
+        $validate = Validator::make($request->all(), [
+            'replay' => 'required|string'
+        ]);
+
+        if ($validate->fails()) {
+            return back()->withErrors($validate)->withInput();
+        }
+
+        $message = ComentForConfioused::find($id);
+        $message->replay = $request->replay;
+        $message->status = 0;
+        if ($message->isDirty()) {
+            $message->update();
+            return redirect()->route('admin.message.index')->with('success', 'Replay Successfully!');
+        }
+        return redirect()->route('admin.message.index')->with('error', 'Nothing Changed!');
     }
 
 

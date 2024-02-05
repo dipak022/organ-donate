@@ -3,9 +3,12 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use App\Models\OrganTransplant;
+use Egulias\EmailValidator\Parser\Comment;
 use Illuminate\Http\Request;
 use App\Models\Donate;
 use App\Models\DeathDonate;
+use App\Models\ComentForConfioused;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 use DateTime;
@@ -139,5 +142,96 @@ class DonateController extends Controller
             'alert-type' => 'error'
         );
         return redirect()->route('home')->with($notification);
+    }
+    public function deathOrganTransplantStore(Request $request){
+
+        
+
+        $validate = Validator::make($request->all(), [
+            'donate_id' => 'required',
+            'death_date' => 'required|date',
+            'death_time' => 'required|string',
+            'phone' => 'required|string',
+            'address' => 'required|string',
+            'city' => 'required|string',
+            'postal_code' => 'required|string',
+            'country' => 'required|string',
+            'email' => 'required|string',
+            'death_organs_tissues_status' => 'required|string',
+            'anything_description' => 'nullable|string',
+        ]);
+
+        if ($validate->fails()) {
+            return back()->withErrors($validate)->withInput();
+        }
+
+        $death_donate_id = Donate::where('id',$request->donate_id)->first()->user_id;
+
+        $death_donate = new OrganTransplant();
+        $death_donate->donate_id = $request->donate_id;
+        $death_donate->death_donate_id = $death_donate_id;
+        $death_donate->death_date = strtotime($request->death_date) ? (new DateTime($request->death_date))->format('Y-m-d') : null;
+        $death_donate->death_time = $request->death_time;
+        $death_donate->phone = $request->phone;
+        $death_donate->address = $request->address;
+        $death_donate->address_line = $request->address_line;
+        $death_donate->city = $request->city;
+        $death_donate->postal_code = $request->postal_code;
+        $death_donate->country = $request->country;
+        $death_donate->email = $request->email;
+        $death_donate->death_organs_tissues_status = $request->death_organs_tissues_status;
+       
+        $death_donate->anything_description = $request->anything_description;
+        $death_donate->status = 1;
+        $death_donate->created_by = $death_donate_id;
+        $death_donate->save();
+        if ($death_donate) {
+            $notification = array(
+                'message' => 'Organ Transplant Submit Successfully!',
+                'alert-type' => 'success'
+            );
+            return redirect()->route('home')->with($notification);
+        }
+        $notification = array(
+            'message' => 'Failed to submit Organ Transplant !',
+            'alert-type' => 'error'
+        );
+        return redirect()->route('home')->with($notification);
+    }
+
+    public function commentStore(Request $request){
+        //return $request->all();
+        $validate = Validator::make($request->all(), [
+            'description' => 'required',
+        ]);
+
+        if ($validate->fails()) {
+            return back()->withErrors($validate)->withInput();
+        }
+        if(Auth::check()){
+            $comment = new ComentForConfioused();
+            $comment->user_id = Auth::id();
+            $comment->description = $request->description;
+            $comment->status = 1;
+            $comment->save();
+            if ($comment) {
+                $notification = array(
+                    'message' => 'Send Successfully!',
+                    'alert-type' => 'success'
+                );
+                return redirect()->back()->with($notification);
+            }
+            $notification = array(
+                'message' => 'Failed to send message !',
+                'alert-type' => 'error'
+            );
+            return redirect()->back()->with($notification);
+        }
+        $notification = array(
+            'message' => 'At Frist login your account !',
+            'alert-type' => 'error'
+        );
+        return redirect()->back()->with($notification);
+        
     }
 }

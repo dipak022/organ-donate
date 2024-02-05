@@ -8,6 +8,7 @@ $baseDir = dirname($vendorDir);
 return array(
     'App\\Console\\Kernel' => $baseDir . '/app/Console/Kernel.php',
     'App\\Exceptions\\Handler' => $baseDir . '/app/Exceptions/Handler.php',
+    'App\\Http\\Controllers\\Admin\\AdminController' => $baseDir . '/app/Http/Controllers/Admin/AdminController.php',
     'App\\Http\\Controllers\\Admin\\ConfusedController' => $baseDir . '/app/Http/Controllers/Admin/ConfusedController.php',
     'App\\Http\\Controllers\\Admin\\CustomerController' => $baseDir . '/app/Http/Controllers/Admin/CustomerController.php',
     'App\\Http\\Controllers\\Admin\\DepartmentController' => $baseDir . '/app/Http/Controllers/Admin/DepartmentController.php',
@@ -54,7 +55,9 @@ return array(
     'App\\Models\\Designation' => $baseDir . '/app/Models/Designation.php',
     'App\\Models\\Doctor' => $baseDir . '/app/Models/Doctor.php',
     'App\\Models\\Donate' => $baseDir . '/app/Models/Donate.php',
+    'App\\Models\\OrganTransplant' => $baseDir . '/app/Models/OrganTransplant.php',
     'App\\Models\\User' => $baseDir . '/app/Models/User.php',
+    'App\\Models\\comment' => $baseDir . '/app/Models/comment.php',
     'App\\Providers\\AppServiceProvider' => $baseDir . '/app/Providers/AppServiceProvider.php',
     'App\\Providers\\AuthServiceProvider' => $baseDir . '/app/Providers/AuthServiceProvider.php',
     'App\\Providers\\BroadcastServiceProvider' => $baseDir . '/app/Providers/BroadcastServiceProvider.php',

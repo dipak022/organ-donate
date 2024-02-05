@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\OrganTransplant;
 use Illuminate\Http\Request;
 use App\Models\Donate;
 use App\Models\DeathDonate;
@@ -29,6 +30,10 @@ class ShowController extends Controller
     public function deathDonateShow(){
         $data['death_donates'] = DeathDonate::with(['user','donate'])->get();
         return view('admin.show.death_donate', $data);
+    }
+    public function deathOrganTransplantShow(){
+        $data['organ_transplants'] = OrganTransplant::with(['user','donate'])->get();
+        return view('admin.show.organ_transplant', $data);
     }
     public function userAccountShow(){
         $data['users'] = User::all();

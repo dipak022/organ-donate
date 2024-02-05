@@ -210,6 +210,54 @@
                 </li>
 
 
+            @php
+            $isActive = routeCheck(['admin.death.organ.transplant.show']);
+            @endphp
+            <li class="nav-item {{ $isActive ? 'menu-open' : '' }}">
+                <a href="#" class="nav-link {{ $isActive ? 'active' : '' }}">
+                    <i class="nav-icon fas fa-cogs"></i>
+                    <p>
+                         Organ Transplant
+                        <i class="right fas fa-angle-left"></i>
+                    </p>
+                </a>
+                <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                        <a href="{{ route('admin.death.organ.transplant.show') }}"
+                            class="nav-link {{ routeCheck(['admin.death.organ.transplant.show']) ? 'active' : '' }}">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>Organ Transplant</p>
+                        </a>
+                        
+                    </li>
+                </ul>
+            </li>
+
+
+            @php
+            $isActive = routeCheck(['admin.message.index']);
+            @endphp
+            <li class="nav-item {{ $isActive ? 'menu-open' : '' }}">
+                <a href="#" class="nav-link {{ $isActive ? 'active' : '' }}">
+                    <i class="nav-icon fas fa-cogs"></i>
+                    <p>
+                         Message
+                        <i class="right fas fa-angle-left"></i>
+                    </p>
+                </a>
+                <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                        <a href="{{ route('admin.message.index') }}"
+                            class="nav-link {{ routeCheck(['admin.message.index']) ? 'active' : '' }}">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>Message List</p>
+                        </a>
+                        
+                    </li>
+                </ul>
+            </li>
+
+
 
                 @php
                     $isActive = routeCheck(['admin.user.account.show']);
